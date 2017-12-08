@@ -12,6 +12,10 @@
 	<label>Stock</label>
 	{{ Form::text('stock', null, ['class' => "form-control"]) }}
 </div>
+<div class="form-group">
+	<label>Featured</label>
+	{{ Form::text('is_featured', null, ['class' => "form-control"]) }}
+</div>
 
 <div class="form-group">
 	<label>description</label>

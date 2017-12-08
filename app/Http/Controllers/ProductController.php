@@ -31,17 +31,18 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-      $image_name = snake_case($request->image->getClientOriginalName());
+      $image_name = snake_case( $request->image->getClientOriginalName());
         $request->image->move('uploads', $image_name);
-       $product = Product::create( $request->all() );
-       Product::create([
+       //product = Product::create( $request->all() );
+        $product = Product::create([
         'name' => $request->name,
         'price' => $request->price,
         'stock' => $request->stock,
         'description' => $request->description,
+        'is_featured' => $request->is_featured,
         'image' => $image_name
 
-        ]);
+       ]);
         $product->categories()->sync( $request->category_id);
         return redirect("products");
      

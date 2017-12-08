@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('stock');
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->unsignedInteger('is_featured');
             $table->timestamps();
         });
     }

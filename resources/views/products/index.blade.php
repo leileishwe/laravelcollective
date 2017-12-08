@@ -13,8 +13,8 @@
 
 		<p> {{ $product->description }}</p>
 
-		<img src="{{ asset('uploads/$product->image') }}">
-
+		<img src='/uploads/{{$product->image}}') }}">
+		<br><br><br>
 
 		{{ Form::open([
 			'action' => ['ProductController@destroy', $product->id],
